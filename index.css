@@ -35,7 +35,8 @@
     --line-height-small: 1.2;
 
     --black: #000;
-    --pink: #ff3258;
+    --bgcolor: #1b6d4b;
+    --pink: #16215f;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
 
@@ -74,6 +75,7 @@ body {
     line-height: var(--line-height-normal);
     background: var(--black);
     overflow-x: hidden;
+    background-color: #1b4a4a;
 }
 
 .row {
@@ -143,16 +145,11 @@ h3 {
 h2 {
     font-size: var(--font-size-large);
     margin-bottom: var(--gutter-medium);
+    border-bottom: 1px solid var(--pink);
+    display: inline-block;
 }
 
-h2::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 10rem;
-    background: var(--pink);
-    margin: var(--gutter-small) 0;
-}
+
 
 h3 {
     font-size: var(--font-size-medium-1);
@@ -402,10 +399,13 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Header ----- */
 /* --------------------------------------- */
-
-.header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+@media screen and (min-width: 480px) {
+    .header {
+        background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
         url('./images/header.jpg');
+    }
+  }
+.header {
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -614,3 +614,25 @@ ol.about {
         padding: var(--gutter-medium) 0;
     } 
 }
+
+.skills_box i {
+    font-size: 7rem;
+}
+
+.skills_box i .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .skills_box i:hover .tooltiptext {
+    visibility: visible;
+  }
