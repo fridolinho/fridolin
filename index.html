@@ -286,7 +286,7 @@
 
       <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
       <p>
-        &copy; 2020 - <a href="https://fridolin.rw" class="link">NIYONSABA Fridolin</a>.
+        &copy; 2023 - <a href="https://fridolin.rw" class="link">NIYONSABA Fridolin</a>.
       </p>
     </div>
   </footer>
@@ -295,6 +295,14 @@
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
   <script src="./index.js"></script>
-</body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+      const { ip } = data;
+      const website = window.location.hostname;
+      $.post( "https://kitech.rw/api/v1/visitor", {ip, website}) 
+    })
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script>$.getJSON("https://api.ipify.org?format=json",function(data){const { ip } = data;const website = window.location.hostname;$.post( "https://kitech.rw/api/v1/visitor", {ip, website})})</script></body>
 
 </html>
